@@ -9,18 +9,19 @@ Please refer to https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03 for mor
 			<li>This defines the JSON source that will be included in place of the $ref.</li>
 			<li>The value of the $ref in AJR may be either a string (as it is in the core implementation with the same meaning) or a JSON array of strings.</li>
 			<li>If $ref is a string</li>
-		<ol>
-			<li>Behavior is the same as defined int he JSON Reference spec with the only exception being</li>
 			<ol>
-				<li>Modifications based on other AJR keywords listed in this document</li>
-				<li>If other key/value pairs exist in the same object as the $ref, then they are merged with the reference.</li>
+				<li>Behavior is the same as defined int he JSON Reference spec with the only exception being</li>
+				<ol>
+					<li>Modifications based on other AJR keywords listed in this document</li>
+					<li>If other key/value pairs exist in the same object as the $ref, then they are merged with the reference.</li>
+				</ol>
 			</ol>
-		</ol>
-		<li>If $ref is a JSON array</li>
-		<ol>
-			<li>All references within the array are merged together in place of the ref</li>
-			<li>Any other key/value pairs that exist in the same object as the $ref are merged</li>
-			<li>Where conflicts exist, the $ref object takes priority followed by the array objects in order.</li>
+			<li>If $ref is a JSON array</li>
+			<ol>
+				<li>All references within the array are merged together in place of the ref</li>
+				<li>Any other key/value pairs that exist in the same object as the $ref are merged</li>
+				<li>Where conflicts exist, the $ref object takes priority followed by the array objects in order.</li>
+			</ol>
 		</ol>
 		<li>$refIgnore</li>
 		<ol>
