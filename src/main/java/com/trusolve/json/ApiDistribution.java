@@ -285,7 +285,11 @@ public class ApiDistribution {
 
   private ObjectNode getPathsNode() {
     if (this.pathsNode == null) {
-      this.pathsNode = (ObjectNode) rootDocument.get("paths");
+      try {
+        this.pathsNode = (ObjectNode) rootDocument.get("paths");
+      } catch (Exception e) {
+          this.pathsNode = this.rootDocument.putObject("paths");
+      }
       if (this.pathsNode == null) {
         this.pathsNode = this.rootDocument.putObject("paths");
       }
